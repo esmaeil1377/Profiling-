@@ -1,7 +1,5 @@
+import java.util.concurrent.ThreadLocalRandom;
 class ThreeSum1 {
-
-    // returns true if there is triplet with sum equal
-    // to 'sum' present in A[]. Also, prints the triplet
     boolean find3Numbers(int A[], int arr_size, int sum)
     {
         int l, r;
@@ -23,6 +21,7 @@ class ThreeSum1 {
         }
 
         // If we reach here, then no triplet was found
+        System.out.println("not found");
         return false;
     }
 
@@ -30,10 +29,16 @@ class ThreeSum1 {
     public static void main(String[] args)
     {
         ThreeSum1 triplet = new ThreeSum1();
-        int A[] = { 1, 4, 45, 6, 10, 8 };
-        int sum = 22;
-        int arr_size = A.length;
-
+        int arr_size = 10000;
+        int A[] = new int[arr_size];
+        int min = 0;
+        for (int i = 0; i < arr_size; i++) {
+//            A[i] = ThreadLocalRandom.current().nextInt(min, arr_size);
+            A[i] = 1;
+        }
+//        int sum = ThreadLocalRandom.current().nextInt(min, arr_size);
+        int  sum = 0;
         triplet.find3Numbers(A, arr_size, sum);
     }
 }
+
